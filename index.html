@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico PRF — descubra o que está te impedindo de começar</title>
+<meta name="description" content="Responda 10 perguntas rápidas e descubra se o que te trava na PRF é falta de tempo, falta de método ou a Síndrome da Espera. Novo concurso já solicitado, com previsão de até 5.000 vagas.">
+<meta property="og:title" content="Diagnóstico PRF — descubra o que está te impedindo de começar">
+<meta property="og:description" content="Diagnóstico personalizado do seu perfil pra PRF: tempo, método, idade, medo, edital e o próximo passo. Previsão de até 5.000 vagas no novo concurso já solicitado.">
+<meta property="og:type" content="website">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '297518201669282');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=297518201669282&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2D5C; --navy-2:#142348; --navy-deep:#0e1830;
+    --blue:#2E5BBA; --blue-light:#5b86d9;
+    --green:#548235; --green-light:#6ba43f;
+    --red:#C00000; --orange:#ED7D31;
+    --paper:#F5F6FA; --white:#ffffff;
+    --ink:#1a2236; --muted:#646e85; --line:#e3e7f0;
+    --gold:#E0B64A;
+    --shadow:0 10px 40px rgba(20,35,72,.12);
+    --shadow-soft:0 4px 18px rgba(20,35,72,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper); color:var(--ink);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .display{font-family:'Barlow Condensed','Inter',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.04}
+  .wrap{max-width:560px;margin:0 auto;padding:0 18px}
+
+  /* ---------- top bar / progress ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:var(--navy);color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .topbar-inner{max-width:560px;margin:0 auto;padding:11px 18px;display:flex;align-items:center;gap:10px}
+  .badge{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-weight:700;letter-spacing:.04em;font-size:15px}
+  .badge .shield{width:22px;height:22px;flex:0 0 auto}
+  .phase-tag{margin-left:auto;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-light)}
+  .progress{height:4px;background:rgba(255,255,255,.14);width:100%}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue-light));width:0;transition:width .4s cubic-bezier(.4,0,.2,1)}
+  .topbar.hidden{display:none}
+
+  /* ---------- screens ---------- */
+  .screen{display:none;animation:fade .45s ease both}
+  .screen.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .screen{animation:none}
+    .progress-fill{transition:none}
+  }
+
+  /* ---------- intro ---------- */
+  .intro{
+    background:radial-gradient(120% 90% at 50% -10%,#24407a 0%,var(--navy) 45%,var(--navy-deep) 100%);
+    color:#fff;min-height:100vh;display:flex;align-items:center;
+    padding:48px 0;
+  }
+  .intro-card{text-align:center}
+  .intro .eyebrow{
+    display:inline-block;border:1px solid rgba(224,182,74,.5);color:var(--gold);
+    font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    padding:6px 14px;border-radius:100px;margin-bottom:24px;
+  }
+  .intro h1{font-size:clamp(30px,8vw,44px);font-weight:700;margin-bottom:18px}
+  .intro h1 em{font-style:normal;color:var(--gold)}
+  .intro p{color:#cdd6ea;font-size:16px;max-width:430px;margin:0 auto 30px}
+  .start-meta{display:flex;justify-content:center;gap:22px;margin:26px 0 32px;flex-wrap:wrap}
+  .start-meta div{font-size:12px;color:#9fb0d4;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  .start-meta b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:24px;color:#fff;font-weight:700}
+  .authority-line{margin-top:36px;font-size:13px;color:#9fb0d4;border-top:1px solid rgba(255,255,255,.1);padding-top:20px}
+  .authority-line b{color:#fff}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.04em;
+    font-weight:700;font-size:20px;
+    border:none;border-radius:12px;cursor:pointer;
+    padding:17px 30px;width:100%;max-width:420px;
+    transition:transform .12s ease,box-shadow .2s ease,background .2s ease;
+  }
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(46,91,186,.4)}
+  .btn-primary:hover{background:#2950a3;transform:translateY(-2px)}
+  .btn-cta{background:linear-gradient(180deg,#6ba43f,var(--green));color:#fff;box-shadow:0 10px 28px rgba(84,130,53,.45);font-size:22px}
+  .btn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(84,130,53,.55)}
+  .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  /* ---------- question screen ---------- */
+  .q-screen{padding:30px 0 50px}
+  .q-counter{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .q-title{font-size:clamp(22px,5.4vw,28px);font-weight:700;color:var(--navy);margin-bottom:22px;line-height:1.22}
+  .options{display:flex;flex-direction:column;gap:11px}
+  .opt{
+    display:flex;align-items:center;gap:13px;
+    background:#fff;border:1.5px solid var(--line);border-radius:13px;
+    padding:16px 17px;cursor:pointer;text-align:left;font-size:16px;font-weight:500;color:var(--ink);
+    transition:border-color .15s,background .15s,transform .1s;
+  }
+  .opt:hover{border-color:var(--blue-light);background:#fafbff}
+  .opt:active{transform:scale(.99)}
+  .opt.selected{border-color:var(--blue);background:#eef3fc}
+  .opt .marker{
+    width:24px;height:24px;flex:0 0 auto;border-radius:50%;border:2px solid var(--line);
+    display:flex;align-items:center;justify-content:center;transition:.15s;
+  }
+  .opt.selected .marker{border-color:var(--blue);background:var(--blue)}
+  .opt.selected .marker::after{content:"";width:9px;height:9px;border-radius:50%;background:#fff}
+  .opt:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .back-link{display:inline-flex;align-items:center;gap:6px;margin-top:24px;background:none;border:none;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .back-link:hover{color:var(--navy)}
+
+  /* ---------- capture ---------- */
+  .capture{padding:40px 0 60px;text-align:center}
+  .capture .lock{width:54px;height:54px;margin:0 auto 18px;color:var(--green)}
+  .capture h2{font-size:clamp(24px,6vw,30px);font-weight:700;color:var(--navy);margin-bottom:10px}
+  .capture p{color:var(--muted);font-size:15px;margin-bottom:26px}
+  .field{text-align:left;margin-bottom:14px}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .field input{
+    width:100%;border:1.5px solid var(--line);border-radius:11px;padding:14px 15px;
+    font-size:16px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color .15s;
+  }
+  .field input:focus{outline:none;border-color:var(--blue)}
+  .field input.err{border-color:var(--red)}
+  .err-msg{color:var(--red);font-size:12.5px;margin-top:5px;display:none}
+  .err-msg.show{display:block}
+  .privacy{font-size:12px;color:var(--muted);margin-top:16px}
+
+  /* ---------- result / diagnosis ---------- */
+  .result{padding:34px 0 10px}
+  .verdict{
+    background:linear-gradient(165deg,#24407a,var(--navy) 55%,var(--navy-deep));
+    color:#fff;border-radius:20px;padding:34px 26px 30px;text-align:center;
+    box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .verdict::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 0%,rgba(224,182,74,.16),transparent 70%)}
+  .verdict-label{position:relative;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+  .gauge{position:relative;width:188px;height:188px;margin:0 auto 8px}
+  .gauge svg{transform:rotate(-90deg)}
+  .gauge .track{fill:none;stroke:rgba(255,255,255,.12);stroke-width:13}
+  .gauge .meter{fill:none;stroke:url(#g1);stroke-width:13;stroke-linecap:round;transition:stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1)}
+  .gauge-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gauge-num b{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:700;line-height:1}
+  .gauge-num span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bcccea;margin-top:2px}
+  .verdict h2{position:relative;font-size:clamp(21px,5.4vw,26px);font-weight:700;margin-top:6px;line-height:1.2}
+  .verdict h2 em{font-style:normal;color:var(--gold)}
+
+  .diag-body{padding:26px 2px 0}
+  .diag-body p{font-size:15.5px;color:#2c3654;margin-bottom:16px}
+  .diag-body p strong{color:var(--navy)}
+  .profile{
+    background:#fff;border-left:4px solid var(--blue);border-radius:0 13px 13px 0;
+    padding:18px 18px;margin:6px 0 18px;box-shadow:var(--shadow-soft);
+  }
+  .profile .tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-weight:700;color:var(--blue);letter-spacing:.04em;font-size:18px;margin-bottom:4px}
+  .profile p{font-size:14.5px;color:#3a4566;margin:0 0 10px}
+  .profile p:last-child{margin-bottom:0}
+  .profile p b{color:var(--navy)}
+  .syndrome{
+    background:#fff;border-left:4px solid var(--orange);border-radius:0 13px 13px 0;
+    padding:18px 18px;margin:6px 0 18px;box-shadow:var(--shadow-soft);
+  }
+  .syndrome .tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-weight:700;color:var(--orange);letter-spacing:.04em;font-size:18px;margin-bottom:4px}
+  .syndrome p{font-size:14.5px;color:#3a4566;margin:0}
+  .opp{
+    background:var(--navy);color:#fff;border-radius:16px;padding:22px 20px;margin:20px 0;
+  }
+  .opp .tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;color:var(--gold);font-weight:700;letter-spacing:.05em;font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .opp p{font-size:14.5px;color:#d4dcf0;margin-bottom:12px}
+  .opp p:last-child{margin-bottom:0}
+  .opp b{color:#fff}
+  .opp .salary{border-top:1px solid rgba(255,255,255,.14);padding-top:12px;font-weight:600;color:#fff}
+  .diag-cta{text-align:center;padding:8px 0 4px}
+  .diag-cta .hint{font-size:13px;color:var(--muted);margin-top:10px}
+
+  /* medio honest screen */
+  .medio-box{background:#fff;border-radius:18px;padding:30px 24px;box-shadow:var(--shadow);text-align:left}
+  .medio-box .icon{width:46px;height:46px;color:var(--blue);margin-bottom:14px}
+  .medio-box h2{font-size:24px;color:var(--navy);font-weight:700;margin-bottom:14px}
+  .medio-box p{font-size:15.5px;color:#2c3654;margin-bottom:15px}
+  .medio-box p strong{color:var(--navy)}
+
+  /* ---------- video interstitial ---------- */
+  .video-screen{padding:40px 0 60px;text-align:center}
+  .video-screen .eyebrow-dark{display:inline-block;border:1px solid rgba(46,91,186,.4);color:var(--blue);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px}
+  .video-title{font-size:clamp(22px,5.6vw,30px);font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.2}
+  .video-title span{color:var(--blue)}
+  .video-sub{color:var(--muted);font-size:15.5px;max-width:450px;margin:0 auto 24px}
+  .video-frame{position:relative;width:100%;min-height:60px;background:#0e1830;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px}
+  .video-frame vturb-smartplayer{display:block;width:100%}
+  .video-placeholder{position:relative;display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;color:#9fb0d4;font-size:15px;font-weight:600;background:linear-gradient(165deg,#24407a,var(--navy-deep));padding:38px 20px;text-align:center;min-height:180px}
+  .video-placeholder span{font-size:34px}
+  .video-cta{min-height:62px;display:flex;align-items:center;justify-content:center}
+  .video-wait{display:flex;align-items:center;justify-content:center;gap:11px;color:var(--muted);font-size:14px;font-weight:600}
+  .video-wait .spinner{width:18px;height:18px;flex:0 0 auto;border:2.5px solid var(--line);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.video-wait .spinner{animation:none}}
+  .video-btn{animation:fade .5s ease both}
+
+  /* ---------- pitch ---------- */
+  .pitch{display:none;background:var(--paper)}
+  .pitch.show{display:block;animation:fade .5s ease both}
+  .pitch-hero{background:linear-gradient(165deg,var(--navy),var(--navy-deep));color:#fff;padding:46px 0 40px;text-align:center;margin-top:30px}
+  .pitch-hero .eyebrow{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:6px;margin-bottom:18px}
+  .pitch-hero h2{font-size:clamp(27px,6.6vw,38px);font-weight:700;margin-bottom:14px}
+  .pitch-hero h2 em{font-style:normal;color:var(--gold)}
+  .pitch-hero p{color:#cdd6ea;font-size:16px;max-width:440px;margin:0 auto}
+  .pitch-hero .when{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:19px;letter-spacing:.03em;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:9px 18px;border-radius:100px}
+
+  .section{padding:40px 0}
+  .section h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:clamp(23px,5.6vw,30px);font-weight:700;color:var(--navy);text-align:center;margin-bottom:8px;line-height:1.12}
+  .section .sub{text-align:center;color:var(--muted);font-size:15px;max-width:430px;margin:0 auto 26px}
+
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ba-col{border-radius:14px;padding:18px 16px}
+  .ba-col.before{background:#fff;border:1.5px solid var(--line)}
+  .ba-col.after{background:#eef5e8;border:1.5px solid #cfe0bd}
+  .ba-col h4{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:.03em}
+  .ba-col.before h4{color:var(--muted)}
+  .ba-col.after h4{color:var(--green)}
+  .ba-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .ba-col li{font-size:13.5px;display:flex;gap:8px;align-items:flex-start;line-height:1.35}
+  .ba-col li svg{width:16px;height:16px;flex:0 0 auto;margin-top:2px}
+  .ba-col.before li svg{color:#b9c0d0}
+  .ba-col.after li svg{color:var(--green)}
+
+  /* nights (programação) */
+  .nights{display:flex;flex-direction:column;gap:14px}
+  .night{background:var(--navy);color:#fff;border-radius:16px;padding:24px 22px;position:relative;overflow:hidden}
+  .night::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 100% 0%,rgba(224,182,74,.12),transparent 60%)}
+  .night .n-date{position:relative;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-weight:700;color:var(--gold);letter-spacing:.06em;font-size:15px;margin-bottom:6px}
+  .night h4{position:relative;font-size:20px;font-weight:700;margin-bottom:8px}
+  .night p{position:relative;font-size:14.5px;color:#d4dcf0}
+  .night p b{color:#fff}
+
+  /* authority */
+  .author{background:#fff;border-radius:18px;box-shadow:var(--shadow-soft);padding:26px 22px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .author h4{font-size:20px;color:var(--navy);font-weight:700}
+  .author .role{font-size:13px;color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+  .author p{font-size:14.5px;color:#3a4566;max-width:420px}
+  .author .stats{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;justify-content:center}
+  .author .stats div b{font-family:'Barlow Condensed',sans-serif;font-size:26px;color:var(--navy);display:block;line-height:1;font-weight:700}
+  .author .stats div span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+
+  /* includes */
+  .includes{display:flex;flex-direction:column;gap:11px;margin-top:8px}
+  .inc{display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+  .inc .ic{width:38px;height:38px;flex:0 0 auto;border-radius:9px;background:#eef3fc;display:flex;align-items:center;justify-content:center;color:var(--blue)}
+  .inc .ic svg{width:20px;height:20px}
+  .inc b{display:block;font-size:15px;color:var(--navy);font-weight:600}
+  .inc span{font-size:13px;color:var(--muted)}
+
+  /* offer card */
+  .offer{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:30px 24px;text-align:center;border-top:5px solid var(--gold)}
+  .offer .kicker{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:18px;letter-spacing:.04em;color:var(--blue);font-weight:700}
+  .offer .name{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;color:var(--navy);text-transform:uppercase;line-height:1;margin:2px 0 8px}
+  .offer .when-line{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:16px}
+  .offer .price-main{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:var(--navy)}
+  .offer .price-install{font-size:15px;color:var(--muted);margin-top:2px}
+  .offer .price-install b{color:var(--ink)}
+  .offer .price-cash{font-size:13px;color:var(--muted);margin-top:6px}
+  .offer .btn{margin:20px auto 0}
+  .offer .guarantee{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;font-size:13px;color:var(--green);font-weight:600}
+  .offer .guarantee svg{width:18px;height:18px}
+  .offer .scarcity{font-size:13px;color:var(--red);font-weight:600;margin-top:14px}
+
+  .closing{text-align:center;padding:30px 0 50px}
+  .closing .sig{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:18px;font-weight:700;color:var(--navy);letter-spacing:.03em}
+  .closing .sig span{display:block;font-family:'Inter';text-transform:none;font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:3px}
+
+  /* ---------- identidade visual (imagens) ---------- */
+  .badge img.shield{width:24px;height:24px;flex:0 0 auto;object-fit:contain}
+  .intro-logo{width:min(300px,74%);height:auto;margin:0 auto 20px;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.4))}
+  .intro-hero{width:100%;border-radius:16px;display:block;margin:6px 0 26px;border:2px solid rgba(224,182,74,.55);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+  .author-photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;margin-bottom:16px;border:2px solid var(--gold)}
+  .news-img{width:100%;border-radius:12px;display:block;margin:4px 0 14px;border:1px solid rgba(255,255,255,.18)}
+  .seal-img{width:90px;height:90px;display:block;margin:2px auto 8px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.2))}
+  .bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .bonus{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 12px 16px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;text-align:center}
+  .bonus img{width:100%;height:158px;object-fit:contain;margin-bottom:11px}
+  .bonus .bonus-tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-weight:700;font-size:13px;letter-spacing:.05em;color:var(--orange);margin-bottom:3px}
+  .bonus b{font-size:14.5px;color:var(--navy);line-height:1.2;margin-bottom:5px}
+  .bonus span{font-size:12.5px;color:var(--muted);line-height:1.35}
+  .bonus-total{margin-top:16px;text-align:center;background:#eef5e8;border:1.5px dashed #cfe0bd;border-radius:12px;padding:14px 16px;font-size:14.5px;color:var(--green);font-weight:700}
+  .pgallery{display:grid;grid-template-columns:1.25fr 1fr;grid-auto-rows:1fr;gap:11px;margin-top:6px}
+  .pgallery .pg{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-soft);min-height:118px}
+  .pgallery .pg img{width:100%;height:100%;object-fit:cover;display:block}
+  .pgallery .pg-main{grid-row:span 2}
+  .pgallery .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,rgba(14,24,48,.85));color:#fff;font-size:11.5px;font-weight:600;padding:22px 12px 9px}
+
+  .footer{background:var(--navy-deep);color:#7e8bab;text-align:center;font-size:11.5px;padding:22px 18px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar hidden" id="topbar">
+  <div class="topbar-inner">
+    <div class="badge">
+      <img class="shield" src="img/brasao-prf.png" alt="Brasão PRF">
+      Diagnóstico PRF
+    </div>
+    <div class="phase-tag" id="phaseTag">Sobre você</div>
+  </div>
+  <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+
+<div id="app"></div>
+
+<!-- ===== INTRO ===== -->
+<section class="screen active" id="screen-intro">
+  <div class="intro">
+    <div class="wrap intro-card">
+      <img class="intro-logo" src="img/logo-profissao-prf.png" alt="Profissão PRF">
+      <span class="eyebrow">Novo concurso solicitado · previsão de até 5.000 vagas</span>
+      <h1>Descubra o que está te <em>impedindo</em> de começar sua preparação pra PRF</h1>
+      <img class="intro-hero" src="img/policiais-prf.jpg" alt="Policiais Rodoviários Federais">
+      <p>Responda 10 perguntas rápidas e descubra se o que te trava é <b>falta de tempo</b>, <b>falta de método</b> ou a <b>Síndrome da Espera</b>. No final, você recebe um diagnóstico personalizado e o próximo passo pra começar do jeito certo — mesmo trabalhando o dia inteiro.</p>
+      <div class="start-meta">
+        <div><b>2 min</b>pra responder</div>
+        <div><b>10</b>perguntas</div>
+        <div><b>100%</b>gratuito</div>
+      </div>
+      <button class="btn btn-primary" onclick="start()">Começar meu diagnóstico</button>
+      <div class="authority-line">Criado pelo <b>Delegado Fábio Silva</b> — de 48 reprovações a Delegado de Polícia. <b>Mais de 5.000 alunos aprovados</b> em concursos por todo o Brasil.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUESTION ===== -->
+<section class="screen" id="screen-question">
+  <div class="wrap q-screen">
+    <div class="q-counter" id="qCounter">Pergunta 1 de 10</div>
+    <h2 class="q-title" id="qTitle"></h2>
+    <div class="options" id="qOptions"></div>
+    <button class="back-link" id="backLink" onclick="prevQuestion()" style="display:none">← Voltar</button>
+  </div>
+</section>
+
+<!-- ===== CAPTURE ===== -->
+<section class="screen" id="screen-capture">
+  <div class="wrap capture">
+    <svg class="lock" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="11" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="15.5" r="1.6" fill="currentColor"/></svg>
+    <h2>Seu diagnóstico PRF está pronto</h2>
+    <p>Pra liberar seu resultado personalizado e o seu próximo passo, informe seus dados abaixo.</p>
+    <div class="field">
+      <label for="fNome">Seu nome</label>
+      <input type="text" id="fNome" placeholder="Como você se chama?" autocomplete="name">
+      <div class="err-msg" id="eNome">Digite seu nome.</div>
+    </div>
+    <div class="field">
+      <label for="fWhats">WhatsApp (com DDD)</label>
+      <input type="tel" id="fWhats" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="numeric">
+      <div class="err-msg" id="eWhats">Digite um WhatsApp válido com DDD.</div>
+    </div>
+    <div class="field">
+      <label for="fEmail">E-mail</label>
+      <input type="email" id="fEmail" placeholder="seu@email.com" autocomplete="email" inputmode="email">
+      <div class="err-msg" id="eEmail">Digite um e-mail válido.</div>
+    </div>
+    <button class="btn btn-primary" onclick="submitLead()">Liberar meu diagnóstico</button>
+    <div class="privacy">🔒 Seus dados estão seguros e não serão compartilhados.</div>
+  </div>
+</section>
+
+<!-- ===== VÍDEO (interstitial antes do diagnóstico) ===== -->
+<section class="screen" id="screen-video">
+  <div class="wrap video-screen">
+    <span class="eyebrow-dark">Diagnóstico em processamento</span>
+    <h2 class="video-title">Estamos preparando seu diagnóstico<span id="videoNome"></span>...</h2>
+    <p class="video-sub">Leva só um instante. Enquanto isso, assista a este recado rápido do Delegado Fábio Silva — ele explica o que o seu resultado significa e qual é o próximo passo.</p>
+    <div class="video-frame" id="videoFrame">
+      <div class="video-placeholder"><span>🎥</span>Seu vídeo aparece aqui</div>
+    </div>
+    <div class="video-cta">
+      <div class="video-wait" id="videoWait"><span class="spinner"></span> Preparando seu diagnóstico… aguarde o vídeo</div>
+      <button class="btn btn-cta video-btn" id="diagBtn" onclick="revealDiagnosis()" style="display:none">Ver meu diagnóstico</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULT ===== -->
+<section class="screen" id="screen-result">
+  <div class="wrap result" id="resultContent"></div>
+
+  <!-- PITCH (revelado só pra quem tem/está cursando ensino superior) -->
+  <div class="pitch" id="pitch">
+    <div class="pitch-hero">
+      <div class="wrap">
+        <span class="eyebrow">Evento ao vivo · 20 e 21 de julho</span>
+        <h2>Você tem perfil pra começar. O que falta é <em>direção</em>.</h2>
+        <p>Em <b>2 noites ao vivo</b>, o Delegado Fábio Silva vai te entregar o método que ele gostaria de ter conhecido antes das 48 reprovações — feito pra quem trabalha o dia inteiro e quer começar do jeito certo.</p>
+        <div class="when">📅 20 e 21 de julho · 🕗 20h (Brasília) · 💻 Online</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="wrap">
+        <h3>O que muda em 2 noites</h3>
+        <p class="sub">A diferença entre quem passa e quem desiste não é estudar mais — é começar com método, direção e decisão.</p>
+        <div class="ba-grid">
+          <div class="ba-col before">
+            <h4>Hoje</h4>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Sem saber por onde começar</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Achando que não tem tempo</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Esperando o edital sair pra agir</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Adiando a decisão há meses</li>
+            </ul>
+          </div>
+          <div class="ba-col after">
+            <h4>Depois do evento</h4>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rotina possível com 2h por dia</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Foco nos 20% do edital que decidem a prova</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Plano completo pra começar no dia seguinte</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Começando antes da multidão</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0">
+      <div class="wrap">
+        <h3>As 2 noites que destravam sua preparação</h3>
+        <p class="sub">Cada noite resolve um problema real de quem está começando do zero.</p>
+        <div class="nights">
+          <div class="night">
+            <div class="n-date">Noite 1 · Segunda, 20 de julho · 20h</div>
+            <h4>Domine seu tempo e o edital</h4>
+            <p>Como criar uma rotina de estudos que funciona <b>mesmo trabalhando o dia inteiro</b> — sem culpa e sem burnout. E como aplicar o método <b>Ovos de Ouro</b> pra identificar os 20% do edital que representam 80% das questões. Chega de estudar tudo: foco cirúrgico no que realmente cai na prova da PRF.</p>
+          </div>
+          <div class="night">
+            <div class="n-date">Noite 2 · Terça, 21 de julho · 20h</div>
+            <h4>Garanta sua aprovação</h4>
+            <p>Monte seu <b>plano de estudos personalizado</b> com as técnicas de memorização que os aprovados da PRF realmente usaram. Você sai da segunda noite com um caminho completo pra começar a estudar com estratégia <b>já no dia seguinte</b>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="author">
+          <img class="author-photo" src="img/fabio-palco.jpg" alt="Delegado Fábio Silva no palco">
+          <h4>Delegado Fábio Silva</h4>
+          <div class="role">Delegado de Polícia · Fundador do SCVP</div>
+          <p>Foram 48 reprovações antes da primeira aprovação. A virada não veio do talento — veio do método. Nas 2 noites do Profissão PRF, ele abre exatamente o caminho que ninguém tinha mostrado pra ele.</p>
+          <div class="stats">
+            <div><b>16</b><span>anos formando</span></div>
+            <div><b>+10mil</b><span>alunos</span></div>
+            <div><b>+5mil</b><span>aprovações</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0">
+      <div class="wrap">
+        <h3>Quem confiou no método</h3>
+        <p class="sub">Resultados reais de quem estudou com direção — não com sorte.</p>
+        <div class="pgallery">
+          <div class="pg pg-main"><img src="img/prova-alunos.jpg" alt="Centenas de alunos do Delegado Fábio Silva"><div class="cap">Centenas de alunos que confiaram no método</div></div>
+          <div class="pg"><img src="img/prova-formatura.jpg" alt="Formatura na PRF com alunos aprovados"><div class="cap">Formatura na PRF</div></div>
+          <div class="pg"><img src="img/prova-abraco.jpg" alt="Aluna aprovada na PRF"><div class="cap">Mais um sonho realizado</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0">
+      <div class="wrap">
+        <h3>Muito mais que um evento: o kit completo de preparação</h3>
+        <p class="sub">Seu ingresso libera, na hora, os materiais que aceleram sua largada — antes mesmo do evento começar.</p>
+        <div class="bonus-grid">
+          <div class="bonus"><img src="img/ent-arsenal.jpg" alt="Arsenal Elite Federal"><div class="bonus-tag">Valor avulso: R$ 100</div><b>Arsenal Elite Federal</b><span>Todas as legislações mais cobradas nos últimos concursos da PRF em um só lugar</span></div>
+          <div class="bonus"><img src="img/ent-raiox.jpg" alt="Raio-X PRF"><div class="bonus-tag">Valor avulso: R$ 170</div><b>Raio-X PRF</b><span>Os assuntos mais cobrados na prova + checklist de estudos</span></div>
+          <div class="bonus"><img src="img/ent-planilha.jpg" alt="Planilha Assuntos Ouro"><div class="bonus-tag">Valor avulso: R$ 150</div><b>Planilha Assuntos Ouro</b><span>Edital verticalizado com destaque pros assuntos mais cobrados</span></div>
+          <div class="bonus"><img src="img/ent-manual.jpg" alt="Manual de Preparação PRF"><div class="bonus-tag">Valor avulso: R$ 120</div><b>Manual de Preparação PRF</b><span>O passo a passo real dos aprovados. Método, não motivação</span></div>
+          <div class="bonus"><img src="img/ent-taf.jpg" alt="Guia Prático do TAF"><div class="bonus-tag">Valor avulso: R$ 100</div><b>Guia Prático do TAF</b><span>Preparação física direcionada pro Teste de Aptidão Física</span></div>
+          <div class="bonus"><img src="img/ent-camisa.jpg" alt="Camisa Elite PRF"><div class="bonus-tag">Sorteio exclusivo</div><b>Camisa Elite PRF</b><span>Todo participante concorre ao sorteio da camisa oficial</span></div>
+        </div>
+        <div class="bonus-total">Valor total dos materiais: R$ 640,00 — tudo incluso no seu ingresso de R$ 19,90</div>
+        <div class="includes" style="margin-top:16px">
+          <div class="inc"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><div><b>2 noites de imersão ao vivo com o Delegado Fábio</b><span>Conteúdo prático e aplicável desde o dia 1</span></div></div>
+          <div class="inc"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><polygon points="10,8 16,12 10,16" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.7"/></svg></div><div><b>Aulas de aquecimento pré-evento</b><span>Acesso imediato após a inscrição, pra você já chegar preparado</span></div></div>
+          <div class="inc"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16 12a2.5 2.5 0 1 0 0-5" stroke="currentColor" stroke-width="1.7"/><path d="M2.5 19c.6-3 3-4.5 5.5-4.5s4.9 1.5 5.5 4.5M15 15c2 .3 3.7 1.6 4.2 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><div><b>Grupo VIP de aquecimento no WhatsApp</b><span>Comunidade, mini-desafios e bastidores até o evento</span></div></div>
+          <div class="inc"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4.97 0 9-3.58 9-8s-4.03-8-9-8-9 3.58-9 8c0 2.05.87 3.93 2.3 5.35L4 21l4.15-1.55c1.16.35 2.46.55 3.85.55Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><div><b>Suporte pra dúvidas durante todo o evento</b><span>Tire suas dúvidas em tempo real nas aulas ao vivo</span></div></div>
+          <div class="inc"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m9 14-1 8 4-2 4 2-1-8" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><div><b>Sorteio de uma Mentoria Elite PRF</b><span>Todo participante do evento concorre</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="offer">
+          <div class="kicker">Sua vaga no evento</div>
+          <div class="name">Ingresso Profissão PRF</div>
+          <div class="when-line">📅 20 e 21 de julho · 🕗 20h (Brasília) · 💻 Online e ao vivo</div>
+          <div class="price-install">Valor total dos materiais inclusos: <b style="font-weight:600;color:var(--muted);text-decoration:line-through">R$ 640,00</b></div>
+          <div class="price-main" style="font-size:46px;margin-top:4px">R$ 19,90</div>
+          <div class="price-cash">ingresso único · acesso imediato às aulas de aquecimento e materiais</div>
+          <a class="btn btn-cta" id="checkoutBtn" href="#" target="_blank" rel="noopener" onclick="if(window.fbq)fbq('track','InitiateCheckout')">Garantir meu ingresso — R$ 19,90</a>
+          <img class="seal-img" src="img/selo-7-dias.png" alt="Garantia de 7 dias">
+          <div class="guarantee">Garantia incondicional de 7 dias — risco zero</div>
+          <div class="scarcity">⚠ O evento acontece nos dias 20 e 21 de julho — entre agora e já receba o kit de aquecimento</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing">
+      <div class="wrap">
+        <div class="sig">Delegado Fábio Silva<span>Mais de 5 mil alunos aprovados</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  Sou Concurseiro e Vou Passar · CNPJ 21.894.883/0001-09<br>
+  Este diagnóstico é uma ferramenta de orientação e não garante aprovação. O novo concurso da PRF encontra-se em fase de solicitação formal, com previsão de até 5.000 vagas — os números citados são estimativas e dependem de autorização oficial.
+</div>
+
+<script>
+/* ====================================================================
+   CONFIGURAÇÃO — preencher antes de publicar
+   ==================================================================== */
+const CHECKOUT_URL = "https://pay.hub.la/sPZoheN2QGCFXAsdLG4J?utm_content=quiz01"; // Hubla — mesmo produto do ingresso das páginas de venda (utm_content identifica venda vinda do quiz)
+const LEAD_WEBHOOK_URL = ""; // venda não passa pelo n8n — leads rastreados pelo Pixel. Vazio = não envia.
+const VTURB_PLAYER_ID = "vid-6a468e84bace28b9089f1eb0"; // player Vturb/ConverteAI do vídeo-ponte do Profissão PRF
+const VTURB_SCRIPT_SRC = "https://scripts.converteai.net/98f98845-02a5-4e75-a39a-bbafedfa3212/players/6a468e84bace28b9089f1eb0/v4/player.js";
+const BUTTON_DELAY_SECONDS = 50; // vídeo-ponte: botão "Ver meu diagnóstico" libera aos 50s
+
+/* ==================================================================== */
+const QUESTIONS = [
+  {id:'idade', phase:'Sobre você', q:'Qual a sua idade?', options:[
+    {v:'18-24',l:'18 a 24 anos'},{v:'25-34',l:'25 a 34 anos'},{v:'35-44',l:'35 a 44 anos'},{v:'45-55',l:'45 a 55 anos'},{v:'56+',l:'56 anos ou mais'}]},
+  {id:'formacao', phase:'Sobre você', q:'Qual a sua formação hoje?', options:[
+    {v:'medio',l:'Ensino Médio'},{v:'cursando',l:'Cursando faculdade'},{v:'superior',l:'Superior completo'},{v:'tecnologo',l:'Tecnólogo'},{v:'pos',l:'Pós-graduação'},{v:'mestrado',l:'Mestrado ou Doutorado'}]},
+  {id:'carreira', phase:'Sobre você', q:'Você já pensou em ter uma carreira pública, com estabilidade e bom salário?', options:[
+    {v:'muitas',l:'Sim, muitas vezes'},{v:'asvezes',l:'Às vezes penso nisso'},{v:'nunca',l:'Nunca tinha parado pra pensar'}]},
+  {id:'renda', phase:'A sua realidade hoje', q:'Quanto você ganha hoje, em média, por mês?', options:[
+    {v:'ate19',l:'Até R$ 1.900'},{v:'19-28',l:'R$ 1.900 a R$ 2.800'},{v:'28-46',l:'R$ 2.800 a R$ 4.600'},{v:'46+',l:'Acima de R$ 4.600'},{v:'semrenda',l:'Estou sem renda agora'}]},
+  {id:'satisfacao', phase:'A sua realidade hoje', q:'Você está satisfeito com o que ganha e com a estabilidade do seu trabalho hoje?', options:[
+    {v:'realizado',l:'Sim, estou realizado'},{v:'queriamais',l:'Pago as contas, mas queria mais'},{v:'merecomais',l:'Não, sinto que mereço muito mais'},{v:'inseguro',l:'Estou inseguro, posso perder meu trabalho'}]},
+  {id:'obstaculo', phase:'A sua realidade hoje', q:'O que mais te impede HOJE de estudar pra um concurso?', options:[
+    {v:'tempo',l:'Falta de tempo — trabalho o dia todo'},{v:'comecar',l:'Não sei por onde começar'},{v:'metodo',l:'Já tentei e me perdi sem método'},{v:'naopramim',l:'Acho que não é pra mim'},{v:'financeiro',l:'Questão financeira'}]},
+  {id:'pensamento', phase:'A sua realidade hoje', q:'Quando você pensa em começar, qual pensamento mais aparece?', options:[
+    {v:'idade',l:'“Já passou da minha idade, não é pra mim”'},{v:'tempo',l:'“Não tenho tempo, é impossível”'},{v:'edital',l:'“Melhor esperar o edital sair”'},{v:'medo',l:'“Eu quero, mas bate o medo de não dar conta”'}]},
+  {id:'mudanca', phase:'O que você quer', q:'Se você passasse na PRF e ganhasse acima de R$ 12 mil por mês, qual seria a PRIMEIRA mudança na sua vida?', options:[
+    {v:'sair',l:'Sair do meu trabalho atual'},{v:'familia',l:'Dar conforto e segurança pra minha família'},{v:'estabilidade',l:'Conquistar estabilidade e dormir tranquilo'},{v:'sonho',l:'Realizar um sonho que ficou pra trás'}]},
+  {id:'move', phase:'O que você quer', q:'O que mais te move na ideia de ser PRF?', options:[
+    {v:'salario',l:'O salário e a estabilidade'},{v:'respeito',l:'O respeito e a realização pessoal'},{v:'mudar',l:'Mudar de vida por completo'},{v:'futuro',l:'Garantir o futuro de quem eu amo'}]},
+  {id:'prontidao', phase:'O que você quer', q:'Se existisse um método pra você estar preparado em poucos meses, estudando só 2h por dia, você...?', options:[
+    {v:'agora',l:'Começaria agora mesmo, decidido'},{v:'norte',l:'Começaria, mas preciso de um norte claro'},{v:'medo',l:'Tenho vontade, mas bate o medo'},{v:'esperaria',l:'Esperaria pra ver se é o momento'}]},
+];
+
+const answers = {};
+let idx = 0;
+const lead = {};
+
+const FORMACAO_LABEL = {medio:'Ensino Médio',cursando:'cursando o ensino superior',superior:'ensino superior completo',tecnologo:'formação de tecnólogo',pos:'pós-graduação',mestrado:'mestrado/doutorado'};
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+function start(){
+  document.getElementById('topbar').classList.remove('hidden');
+  idx = 0;
+  renderQuestion();
+  show('screen-question');
+}
+
+function renderQuestion(){
+  const Q = QUESTIONS[idx];
+  document.getElementById('phaseTag').textContent = Q.phase;
+  document.getElementById('qCounter').textContent = `Pergunta ${idx+1} de ${QUESTIONS.length}`;
+  document.getElementById('qTitle').textContent = Q.q;
+  document.getElementById('progressFill').style.width = ((idx)/QUESTIONS.length*100) + '%';
+  const box = document.getElementById('qOptions');
+  box.innerHTML = '';
+  Q.options.forEach(opt=>{
+    const b = document.createElement('button');
+    b.className = 'opt' + (answers[Q.id]===opt.v?' selected':'');
+    b.innerHTML = `<span class="marker"></span><span>${opt.l}</span>`;
+    b.onclick = ()=>choose(Q.id,opt.v);
+    box.appendChild(b);
+  });
+  document.getElementById('backLink').style.display = idx>0 ? 'inline-flex' : 'none';
+}
+
+function choose(qid,val){
+  answers[qid]=val;
+  renderQuestion();
+  setTimeout(nextQuestion, 230);
+}
+
+function nextQuestion(){
+  if(idx < QUESTIONS.length-1){ idx++; renderQuestion(); }
+  else { document.getElementById('progressFill').style.width='100%'; show('screen-capture'); }
+}
+function prevQuestion(){ if(idx>0){ idx--; renderQuestion(); } }
+
+/* ---------- captura ---------- */
+function validEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+function digits(s){ return (s||'').replace(/\D/g,''); }
+
+function submitLead(){
+  const nome = document.getElementById('fNome').value.trim();
+  const whats = document.getElementById('fWhats').value.trim();
+  const email = document.getElementById('fEmail').value.trim();
+
+  const okNome  = nome.length >= 2;
+  const okWhats = digits(whats).length >= 10;
+  const okEmail = validEmail(email);
+
+  toggleErr('fNome','eNome', okNome);
+  toggleErr('fWhats','eWhats', okWhats);
+  toggleErr('fEmail','eEmail', okEmail);
+
+  if(!(okNome && okWhats && okEmail)) return;
+
+  lead.nome = nome; lead.whatsapp = digits(whats); lead.email = email;
+  lead.evento = 'profissao-prf-20-21-jul26';
+  lead.respostas = {...answers};
+  lead.escolaridade = answers.formacao;       // pra segmentar grupo VIP / Ensino Médio
+  lead.avatar = getAvatar(answers.formacao);
+  lead.resultado = lead.avatar==='medio' ? 'sem_requisito' : getResultado();
+  lead.score = lead.avatar==='medio' ? null : computeScore();
+  lead.tags = buildTags();
+  sendLead(lead);
+  if(window.fbq) fbq('track', 'Lead');   // Meta Pixel: lead capturado
+
+  showVideoScreen();
+}
+
+/* ---------- tela de vídeo (interstitial) ---------- */
+let diagTimer = null;
+function showVideoScreen(){
+  document.getElementById('topbar').classList.add('hidden');
+  const first = (lead.nome||'').split(' ')[0];
+  document.getElementById('videoNome').textContent = first ? (', ' + first) : '';
+
+  const frame = document.getElementById('videoFrame');
+  if(VTURB_PLAYER_ID && !frame.dataset.loaded){
+    frame.innerHTML = `<vturb-smartplayer id="${VTURB_PLAYER_ID}" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>`;
+    var vs = document.createElement('script');
+    vs.src = VTURB_SCRIPT_SRC; vs.async = true;
+    document.head.appendChild(vs);
+    frame.dataset.loaded = '1';
+  }
+
+  const btn = document.getElementById('diagBtn');
+  const wait = document.getElementById('videoWait');
+  btn.style.display = 'none';
+  wait.style.display = 'flex';
+  show('screen-video');
+
+  clearTimeout(diagTimer);
+  diagTimer = setTimeout(()=>{
+    wait.style.display = 'none';
+    btn.style.display = 'inline-flex';
+    btn.scrollIntoView({behavior: prefersReduced()?'instant':'smooth', block:'center'});
+  }, BUTTON_DELAY_SECONDS*1000);
+}
+function revealDiagnosis(){
+  renderResult();
+  show('screen-result');
+}
+
+function toggleErr(inputId, errId, valid){
+  const inp = document.getElementById(inputId);
+  const err = document.getElementById(errId);
+  if(valid){ inp.classList.remove('err'); err.classList.remove('show'); }
+  else { inp.classList.add('err'); err.classList.add('show'); }
+  return valid;
+}
+
+function sendLead(data){
+  // O payload já vai com escolaridade, resultado, score e tags — pronto pra segmentar
+  // grupos de WhatsApp e mensagens de remarketing no CRM/n8n.
+  console.log('LEAD CAPTURADO:', data);
+  if(LEAD_WEBHOOK_URL){
+    try{
+      fetch(LEAD_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    }catch(e){ console.warn('Falha ao enviar lead:', e); }
+  }
+}
+
+/* ---------- avatar (requisito de formação) ---------- */
+function getAvatar(f){
+  if(f==='tecnologo') return 'pragmatico';
+  if(f==='pos'||f==='mestrado') return 'credencialista';
+  if(f==='superior') return 'mainstream';
+  if(f==='cursando') return 'cauteloso';
+  return 'medio';
+}
+
+/* ---------- resultado (perfil de dor — decide o diagnóstico) ---------- */
+function getResultado(){
+  const p = answers.pensamento, o = answers.obstaculo, pr = answers.prontidao;
+  const idadeMadura = ['35-44','45-55','56+'].includes(answers.idade);
+  if(p==='idade' || (o==='naopramim' && idadeMadura)) return 'maduro';
+  if(o==='tempo' || p==='tempo') return 'semtempo';
+  if(o==='metodo') return 'semmetodo';
+  if(o==='comecar') return 'perdido';
+  if(p==='edital' || pr==='esperaria' || p==='medo') return 'espera';
+  return 'perdido';
+}
+
+const RESULTADOS = {
+  semtempo:{
+    nome:'O Profissional Sem Tempo',
+    msg:'Seu problema não é falta de vontade. É tentar estudar como se você tivesse 8 horas livres por dia — quando a sua realidade é outra.',
+    oferta:'Na <b>Noite 1 do Profissão PRF</b>, o Delegado Fábio vai te mostrar como montar uma rotina possível com <b>2h por dia</b>, mesmo trabalhando o dia inteiro.'},
+  perdido:{
+    nome:'O Iniciante Perdido',
+    msg:'Você não está atrasado. Você só não pode começar pelo caminho errado — estudando tudo e não dominando nada.',
+    oferta:'Nas 2 noites do <b>Profissão PRF</b>, o Delegado Fábio vai te mostrar <b>por onde começar</b>, quais assuntos priorizar e como evitar o erro clássico de quem começa sozinho.'},
+  espera:{
+    nome:'O Candidato da Síndrome da Espera',
+    msg:'A espera parece prudência — mas, no concurso, ela vira atraso. Quem espera o edital sair começa correndo atrás dos outros.',
+    oferta:'O <b>Profissão PRF</b> foi criado exatamente pra quebrar essa espera e te colocar em movimento <b>antes da multidão</b>.'},
+  maduro:{
+    nome:'O Candidato Maduro',
+    msg:'Sua idade não é obstáculo. Pode ser vantagem: disciplina, responsabilidade e clareza de propósito — exatamente o que falta em quem tem o dia livre e não aproveita.',
+    oferta:'No <b>Profissão PRF</b>, você vai ver como adaptar a <b>sua rotina real</b> pra começar com estratégia — sem competir do jeito errado.'},
+  semmetodo:{
+    nome:'O Qualificado Sem Método',
+    msg:'Você já tem o requisito que muita gente ainda não tem. O que te travou até aqui não foi capacidade — foi a falta de um método.',
+    oferta:'No <b>Profissão PRF</b>, você vai receber o método <b>Ovos de Ouro</b> aplicado à PRF: os 20% do edital que respondem por 80% das questões.'},
+};
+
+/* ---------- tags de segmentação (CRM / WhatsApp / remarketing) ---------- */
+function buildTags(){
+  const t = new Set();
+  const o = answers.obstaculo, p = answers.pensamento, f = answers.formacao, i = answers.idade, pr = answers.prontidao;
+  const dorObst = {tempo:'dor_tempo', comecar:'dor_metodo', metodo:'dor_metodo', naopramim:'dor_medo', financeiro:'dor_financeiro'};
+  const dorPens = {idade:'dor_idade', tempo:'dor_tempo', edital:'dor_edital', medo:'dor_medo'};
+  const prTag = {agora:'pronto_agora', norte:'precisa_norte', medo:'medo_de_comecar', esperaria:'esperando_momento'};
+  const perfil = {'18-24':'perfil_18_24','25-34':'perfil_25_34','35-44':'perfil_35_44','45-55':'perfil_45_55','56+':'perfil_56_mais'};
+  if(dorObst[o]) t.add(dorObst[o]);
+  if(dorPens[p]) t.add(dorPens[p]);
+  if(prTag[pr]) t.add(prTag[pr]);
+  if(perfil[i]) t.add(perfil[i]);
+  if(f==='medio') t.add('formacao_medio');
+  else if(f==='cursando') t.add('formacao_cursando');
+  else t.add('formacao_superior');
+  if(f!=='medio') t.add('resultado_'+getResultado());
+  return [...t];
+}
+
+/* ---------- score (apenas público com superior) ---------- */
+function computeScore(){
+  let s = 72;
+  const f = answers.formacao;
+  s += ({tecnologo:24, pos:22, mestrado:20, superior:21, cursando:14})[f] || 0;
+  s += ({agora:5, norte:4, medo:3, esperaria:2})[answers.prontidao] || 0;
+  s += ({merecomais:3, inseguro:3, queriamais:2, realizado:1})[answers.satisfacao] || 0;
+  return Math.max(86, Math.min(97, s));
+}
+
+/* ---------- textos dinâmicos ---------- */
+function sintomaTexto(){
+  return ({
+    idade:'“não é pra mim, já passou da minha idade”',
+    tempo:'“não tenho tempo, é impossível”',
+    edital:'“melhor esperar o edital sair”',
+    medo:'“eu quero, mas bate o medo de não dar conta”'
+  })[answers.pensamento] || '“ainda não é a hora”';
+}
+
+function requisitoTexto(av){
+  if(av==='cauteloso') return 'Você está cursando o ensino superior — ou seja, já está construindo o requisito principal pra entrar na PRF. Dá pra começar a se preparar agora e chegar pronto antes mesmo de se formar.';
+  const formLabel = FORMACAO_LABEL[answers.formacao] || 'ensino superior';
+  return `Você marcou que tem <strong>${formLabel}</strong> — ou seja, você já tem o requisito que falta pra maioria das pessoas que sonham com a PRF: o <strong>ensino superior</strong>.`;
+}
+
+function renderResult(){
+  const av = getAvatar(answers.formacao);
+  const box = document.getElementById('resultContent');
+  const pitch = document.getElementById('pitch');
+
+  if(av==='medio'){
+    pitch.classList.remove('show');
+    box.innerHTML = `
+      <div class="medio-box">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.3" r="1.1" fill="currentColor"/></svg>
+        <h2>Olha, ${escapeHtml(lead.nome.split(' ')[0])} — vamos ser diretos e honestos com você.</h2>
+        <p>É assim que a gente trabalha aqui. A PRF exige <strong>diploma de ensino superior</strong> (em qualquer área) pra tomar posse no cargo. Hoje, pelo que você respondeu, o ensino superior ainda é um passo que falta no seu caminho.</p>
+        <p>Isso <strong>não te elimina do jogo</strong> — só muda a ordem das coisas. O seu primeiro passo é a graduação. E o desejo de mudar de vida que te trouxe até aqui é absolutamente real e válido.</p>
+        <p>Guarda esse diagnóstico. Quando o ensino superior estiver no seu caminho, a PRF — com um novo concurso já solicitado e <strong>previsão de até 5.000 vagas</strong> — vai estar te esperando. Continue se preparando.</p>
+      </div>`;
+    return;
+  }
+
+  const score = computeScore();
+  const res = RESULTADOS[getResultado()];
+  const R = 80, C = 2*Math.PI*R;
+  box.innerHTML = `
+    <div class="verdict">
+      <div class="verdict-label">Diagnóstico de prontidão</div>
+      <div class="gauge">
+        <svg width="188" height="188" viewBox="0 0 188 188">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0B64A"/><stop offset="1" stop-color="#6ba43f"/></linearGradient></defs>
+          <circle class="track" cx="94" cy="94" r="${R}"/>
+          <circle class="meter" id="meter" cx="94" cy="94" r="${R}" stroke-dasharray="${C}" stroke-dashoffset="${C}"/>
+        </svg>
+        <div class="gauge-num"><b id="scoreNum">0</b><span>pronto</span></div>
+      </div>
+      <h2>${escapeHtml(lead.nome.split(' ')[0])}, você está <em>mais perto</em> do que imagina.</h2>
+    </div>
+
+    <div class="diag-body">
+      <p>${requisitoTexto(av)}</p>
+
+      <div class="profile">
+        <div class="tag">Seu perfil: ${res.nome}</div>
+        <p>${res.msg}</p>
+        <p>${res.oferta}</p>
+      </div>
+
+      <div class="syndrome">
+        <div class="tag">Síndrome da Espera</div>
+        <p>Você disse que, quando pensa em começar, o que vem é ${sintomaTexto()}. Isso tem nome: é a crença invisível que mantém gente capaz parada — esperando o momento perfeito que nunca chega. E não é culpa sua.</p>
+      </div>
+
+      <p>Porque o que te separou de uma aprovação até hoje <strong>nunca foi falta de capacidade</strong>. Foi falta de método e de direção. Capacidade você já tem.</p>
+
+      <div class="opp">
+        <div class="tag">⚡ Por que agora</div>
+        <p>A PRF já <b>solicitou formalmente</b> a abertura de um novo concurso, com <b>previsão de até 5.000 vagas</b> — a caminho do maior da história da corporação.</p>
+        <img class="news-img" src="img/noticia-vagas.jpg" alt="Notícia: pedido de novo concurso PRF com previsão de mais de 5 mil vagas">
+        <p>Independentemente da data exata do edital: quem espera ele sair começa atrasado. Quem começa agora, chega pronto.</p>
+        <p class="salary">Salário acima de R$ 12 mil iniciais, podendo passar de R$ 20 mil na carreira.</p>
+      </div>
+
+      <div class="diag-cta">
+        <button class="btn btn-cta" onclick="openPitch()">Quero sair da espera — me mostre o caminho</button>
+        <div class="hint">Conheça o seu próximo passo ↓</div>
+      </div>
+    </div>`;
+
+  // animação do medidor + contador
+  requestAnimationFrame(()=>{
+    const meter = document.getElementById('meter');
+    const offset = C - (score/100)*C;
+    if(!prefersReduced()){ meter.style.strokeDashoffset = offset; }
+    else { meter.style.transition='none'; meter.style.strokeDashoffset = offset; }
+    countUp('scoreNum', score);
+  });
+}
+
+function openPitch(){
+  const p = document.getElementById('pitch');
+  document.getElementById('checkoutBtn').href = CHECKOUT_URL || '#';
+  appendTracking();   // repassa UTMs/sck pro link do checkout assim que ele é definido
+  p.classList.add('show');
+  setTimeout(()=>{ p.scrollIntoView({behavior: prefersReduced()?'instant':'smooth', block:'start'}); }, 60);
+}
+
+function countUp(id, target){
+  const el = document.getElementById(id);
+  if(prefersReduced()){ el.textContent = target+'%'; return; }
+  let cur = 0;
+  const step = ()=>{ cur += Math.max(1, Math.round((target-cur)/8)); if(cur>=target){ el.textContent=target+'%'; return; } el.textContent=cur+'%'; requestAnimationFrame(step); };
+  setTimeout(step, 350);
+}
+
+function prefersReduced(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+function escapeHtml(s){ return (s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ---------- checkout: repassa UTMs + sck (rastreio de origem do comprador) ---------- */
+const CHECKOUT_DOMAINS = ["https://pay.hotmart.com","https://pay.hub.la","https://invoice.hub.la"];
+function appendTracking(){
+  const page = new URLSearchParams(window.location.search);
+  if(!page.toString()) return;
+  const utm = k => page.get('utm_'+k) || '';
+  const hasUtm = ['source','medium','campaign','term','content'].some(k=>utm(k));
+  document.querySelectorAll('a').forEach(a=>{
+    if(!CHECKOUT_DOMAINS.some(d=>a.href.indexOf(d)===0)) return;
+    try{
+      const url = new URL(a.href);
+      page.forEach((v,k)=>{ if(k.startsWith('utm_')) url.searchParams.set(k,v); });
+      if(hasUtm) url.searchParams.set('sck', [utm('source'),utm('medium'),utm('campaign'),utm('term'),utm('content')].join('|'));
+      a.href = url.toString();
+    }catch(e){ console.warn('[tracking]', e); }
+  });
+}
+appendTracking();
+
+/* máscara simples de WhatsApp */
+document.getElementById('fWhats').addEventListener('input', e=>{
+  let v = digits(e.target.value).slice(0,11);
+  if(v.length>=7) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+  else if(v.length>=3) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+  else if(v.length>=1) v = `(${v}`;
+  e.target.value = v;
+});
+</script>
+</body>
+</html>
