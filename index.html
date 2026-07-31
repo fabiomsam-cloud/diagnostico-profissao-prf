@@ -93,6 +93,18 @@ src="https://www.facebook.com/tr?id=297518201669282&ev=PageView&noscript=1"
   .start-meta b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:21px;color:#fff;font-weight:700}
   .authority-line{margin-top:16px;font-size:12px;color:#9fb0d4;border-top:1px solid rgba(255,255,255,.1);padding-top:13px}
   .authority-line b{color:#fff}
+  .proof-strip{font-size:12px;color:#cdd6ea;margin-bottom:12px}
+  .proof-strip .stars{color:var(--gold);letter-spacing:1.5px;font-size:12px;margin-right:5px}
+  .proof-strip b{color:#fff}
+  .depo-row{display:grid;grid-template-columns:1fr;gap:8px;margin-top:14px;text-align:left}
+  .depo{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:11px 13px}
+  .depo p{font-size:12.5px;color:#dbe3f5;margin:0 0 5px;line-height:1.4}
+  .depo p::before{content:"“"}.depo p::after{content:"”"}
+  .depo .who{font-size:11px;color:#9fb0d4;font-weight:600}
+  .depo .who .stars{color:var(--gold);letter-spacing:1px;margin-right:6px}
+  .intro-gallery{display:flex;gap:8px;margin-top:14px}
+  .intro-gallery img{width:100%;height:56px;object-fit:cover;border-radius:10px;border:1px solid rgba(224,182,74,.35);flex:1;min-width:0}
+  .gallery-cap{font-size:11px;color:#9fb0d4;margin-top:7px}
 
   /* ---------- buttons ---------- */
   .btn{
@@ -335,6 +347,7 @@ src="https://www.facebook.com/tr?id=297518201669282&ev=PageView&noscript=1"
 <section class="screen active" id="screen-intro">
   <div class="intro">
     <div class="wrap intro-card">
+      <div class="proof-strip"><span class="stars">★★★★★</span> <span><b>+800 concurseiros</b> já fizeram o diagnóstico</span></div>
       <span class="eyebrow">Novo concurso solicitado · até 5.000 vagas</span>
       <h1>Quer ser PRF, mas só tem <em>2 horas por dia</em>?</h1>
       <img class="intro-hero" src="img/m2h-banner.jpg" alt="Método 2 Horas PRF — 24 e 25 de agosto">
@@ -344,7 +357,15 @@ src="https://www.facebook.com/tr?id=297518201669282&ev=PageView&noscript=1"
         <div><b>100%</b>gratuito</div>
       </div>
       <button class="btn btn-primary" onclick="start()">Começar meu diagnóstico</button>
-      <div class="authority-line">Criado pelo <b>Delegado Fábio Silva</b> — <b>mais de 5.000 alunos aprovados</b> em todo o Brasil.</div>
+      <div class="depo-row" id="depoRow"></div>
+      <div class="authority-line">Criado pelo <b>Delegado Fábio Silva</b> — <b>mais de 5.000 alunos aprovados</b> em todo o Brasil.
+        <div class="intro-gallery">
+          <img src="img/prova-formatura.jpg" alt="Formatura na PRF com alunos aprovados">
+          <img src="img/prova-abraco.jpg" alt="Aluna aprovada na PRF">
+          <img src="img/prova-alunos.jpg" alt="Centenas de alunos do Delegado Fábio Silva">
+        </div>
+        <div class="gallery-cap">Alunos do método aprovados — fotos reais de formaturas e encontros</div>
+      </div>
     </div>
   </div>
 </section>
@@ -548,6 +569,10 @@ const LEAD_WEBHOOK_URL = "https://workflows.manager03.scvpgti.com.br/webhook/qui
 const VTURB_PLAYER_ID = "vid-6a468e84bace28b9089f1eb0"; // player Vturb/ConverteAI do vídeo-ponte do Profissão PRF
 const VTURB_SCRIPT_SRC = "https://scripts.converteai.net/98f98845-02a5-4e75-a39a-bbafedfa3212/players/6a468e84bace28b9089f1eb0/v4/player.js";
 const BUTTON_DELAY_SECONDS = 50; // vídeo-ponte: botão "Ver meu diagnóstico" libera aos 50s
+
+// DEPOIMENTOS REAIS — preencher só com frases verdadeiras de alunos/leads (WhatsApp, grupo do evento etc.).
+// Formato: {texto:'...', quem:'Nome, cidade/UF'}. Máx. 2 na abertura. Vazio = seção não aparece.
+const DEPOIMENTOS = [];
 
 /* ==================================================================== */
 const QUESTIONS = [
@@ -935,6 +960,15 @@ function appendTracking(){
   });
 }
 appendTracking();
+
+/* depoimentos reais na abertura (some se a lista estiver vazia) */
+(function(){
+  const box = document.getElementById('depoRow');
+  if(!box || !DEPOIMENTOS.length){ if(box) box.style.display='none'; return; }
+  box.innerHTML = DEPOIMENTOS.slice(0,2).map(d=>
+    `<div class="depo"><p>${escapeHtml(d.texto)}</p><div class="who"><span class="stars">★★★★★</span>${escapeHtml(d.quem)}</div></div>`
+  ).join('');
+})();
 
 /* máscara simples de WhatsApp */
 document.getElementById('fWhats').addEventListener('input', e=>{
